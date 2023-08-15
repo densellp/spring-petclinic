@@ -60,6 +60,6 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'AS-spring-petclinic-DOB'
-        images: 'crspringpetclinicdob.azurecr.io:${{ github.sha }}'
+        images: 'crspringpetclinicdob.azurecr.io/spring-petclinic:${{ github.sha }}'
 
 # testing
