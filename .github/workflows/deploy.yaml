@@ -48,8 +48,8 @@ jobs:
 
     - name: Retag Docker Image and Push to ACR
       run: |
-        docker tag spring-petclinic:3.0.0-SNAPSHOT crspringpetclinicdob.azurecr.io:${{ github.sha }}
-        docker push crspringpetclinicdob.azurecr.io:${{ github.sha }}
+        docker tag spring-petclinic:3.0.0-SNAPSHOT crspringpetclinicdob.azurecr.io/spring-petclinic:${{ github.sha }}
+        docker push crspringpetclinicdob.azurecr.io/spring-petclinic:${{ github.sha }}
 
     - uses: azure/webapps-deploy@v2
       with:
