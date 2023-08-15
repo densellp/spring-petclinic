@@ -56,4 +56,4 @@ jobs:
         app-name: 'AS-spring-petclinic-DOB'
         images: 'crspringpetclinicdob.azurecr.io:${{ github.sha }}'
 
-# testing workflow
+# testing
