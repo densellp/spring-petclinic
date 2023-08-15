@@ -33,8 +33,12 @@ jobs:
     - name: Log into the registry
       run: az acr login --name CRspringpetclinicDOB
 
-    - run: |
-        docker build . -t crspringpetclinicdob.azurecr.io:${{ github.sha }}
+    - name: Build Spring Petclinic
+      run: ./mvnw spring-boot:build-image
+
+    - name: Retag Docker Image and Push to ACR
+      run: |
+        docker tag spring-petclinic:3.1.0-SNAPSHOT crspringpetclinicdob.azurecr.io:${{ github.sha }}
         docker push crspringpetclinicdob.azurecr.io:${{ github.sha }}
 
     - uses: azure/webapps-deploy@v2
